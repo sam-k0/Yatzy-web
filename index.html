@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatzy Scorecard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2 style="text-align: center;">Yatzy Scorecard</h2>
+    <form>
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>Score</th>
+            </tr>
+            <!-- Upper Section -->
+            <tr>
+                <td id="ones-label" onclick="crossOutField('ones-label','ones')">Ones</td>
+                <td><input type="number" id="ones" name="ones" ></td>
+            </tr>
+            <tr>
+                <td id="twos-label" onclick="crossOutField('twos-label','twos')">Twos</td>
+                <td><input type="number" id="twos" name="twos"></td>
+            </tr>
+            <tr>
+                <td id="threes-label" onclick="crossOutField('threes-label','threes')">Threes</td>
+                <td><input type="number" name="threes" id="threes" ></td>
+            </tr>
+            <tr>
+                <td id="fours-label" onclick="crossOutField('fours-label','fours')">Fours</td>
+                <td><input type="number" id="fours" name="fours"></td>
+            </tr>
+            <tr>
+                <td id="fives-label" onclick="crossOutField('fives-label','fives')">Fives</td>
+                <td><input type="number" id="fives" name="fives"></td>
+            </tr>
+            <tr>
+                <td id="sixes-label" onclick="crossOutField('sixes-label', 'sixes')">Sixes</td>
+                <td><input type="number" id="sixes" name="sixes"></td>
+            </tr>
+            <tr>
+                <td class="total">Upper Section Total</td>
+                <td><input type="number" name="upperTotal" id="upperTotal" readonly></td>
+            </tr>
+            <tr>
+                <td class="bonus">Bonus (If total >= 63)</td>
+                <td><input type="number" id="bonus" name="bonus" readonly></td>
+            </tr>
+            <!-- Lower Section -->
+            <tr>
+                <td id="threeOfAKind-label" onclick="crossOutField('threeOfAKind-label', 'threeOfAKind')">Three of a Kind</td>
+                <td><input type="number" id="threeOfAKind" name="threeOfAKind" min="0"></td>
+            </tr>
+            <tr>
+                <td id="fourOfAKind-label" onclick="crossOutField('fourOfAKind-label', 'fourOfAKind')">Four of a Kind</td>
+                <td><input type="number" id="fourOfAKind" name="fourOfAKind" min="0"></td>
+            </tr>
+            <tr>
+                <td id="fullHouse-label" onclick="crossOutField('fullHouse-label', 'fullHouse')">Full House</td>
+                <td><input type="checkbox" id="fullHouse"  ></td>
+            </tr>
+            <tr>
+                <td id="smallStraight-label" onclick="crossOutField('smallStraight-label', 'smallStraight')">Small Straight</td>
+                <td><input type="checkbox" id="smallStraight" ></td>
+            </tr>
+            <tr>
+                <td id="largeStraight-label" onclick="crossOutField('largeStraight-label', 'largeStraight')">Large Straight</td>
+                <td><input type="checkbox" id="largeStraight" ></td>
+            </tr>
+            <tr>
+                <td id="chance-label" onclick="crossOutField('chance-label', 'chance')">Chance</td>
+                <td><input type="number" id="chance" name="chance" min="0"></td>
+            </tr>
+            <tr>
+                <td id="yatzy-label" onclick="crossOutField('yatzy-label', 'yatzy')">Yatzy</td>
+                <td><input type="checkbox" id="yatzy" ></td>
+            </tr>
+            <tr>
+                <td class="total">Lower Section Total</td>
+                <td><input type="number" id="lowerTotal" name="lowerTotal" readonly></td>
+            </tr>
+            <tr>
+                <td class="total">Grand Total</td>
+                <td><input type="number" id="grandTotal" name="grandTotal" readonly></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
