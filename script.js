@@ -1,10 +1,13 @@
+
 function calculateUpperTotal() {
-    let ones = parseInt(document.getElementById('ones').value) || 0;
-    let twos = parseInt(document.getElementById('twos').value) || 0;
-    let threes = parseInt(document.getElementById('threes').value) || 0;
-    let fours = parseInt(document.getElementById('fours').value) || 0;
-    let fives = parseInt(document.getElementById('fives').value) || 0;
-    let sixes = parseInt(document.getElementById('sixes').value) || 0;
+    // Get the value of each input field, or 0 if crossed
+    let ones = document.getElementById('ones-label').style.textDecoration === 'line-through' ? 0 : parseInt(document.getElementById('ones').value) || 0;
+    let twos = document.getElementById('twos-label').style.textDecoration === 'line-through' ? 0 : parseInt(document.getElementById('twos').value) || 0;
+    let threes = document.getElementById('threes-label').style.textDecoration === 'line-through' ? 0 : parseInt(document.getElementById('threes').value) || 0;
+    let fours = document.getElementById('fours-label').style.textDecoration === 'line-through' ? 0 : parseInt(document.getElementById('fours').value) || 0;
+    let fives = document.getElementById('fives-label').style.textDecoration === 'line-through' ? 0 : parseInt(document.getElementById('fives').value) || 0;
+    let sixes = document.getElementById('sixes-label').style.textDecoration === 'line-through' ? 0 : parseInt(document.getElementById('sixes').value) || 0;
+
     
     let upperTotal = ones + twos + threes + fours + fives + sixes;
     document.getElementById('upperTotal').value = upperTotal;
@@ -12,6 +15,9 @@ function calculateUpperTotal() {
     // Calculate bonus
     let bonus = upperTotal >= 63 ? 35 : 0;
     document.getElementById('bonus').value = bonus;
+    
+    // Also return the value for use in the grand total calculation
+    return upperTotal + bonus;
 }
 
 function calculateLowerTotal() {
@@ -27,18 +33,13 @@ function calculateLowerTotal() {
 
     let lowerTotal = threeOfAKind + fourOfAKind + fullHouse + smallStraight + largeStraight + yahtzee + chance;
     document.getElementById('lowerTotal').value = lowerTotal;
+
+    // Also return the value for use in the grand total calculation
+    return lowerTotal;
 }
-
+// Sets the grand total field and updates upper and lower totals
 function calculateGrandTotal() {
-
-    calculateUpperTotal();
-    calculateLowerTotal();
-
-    let upperTotal = parseInt(document.getElementById('upperTotal').value) || 0;
-    let bonus = parseInt(document.getElementById('bonus').value) || 0;
-    let lowerTotal = parseInt(document.getElementById('lowerTotal').value) || 0;
-
-    let grandTotal = upperTotal + bonus + lowerTotal;
+    let grandTotal = calculateUpperTotal() + calculateLowerTotal();
     document.getElementById('grandTotal').value = grandTotal;
 }
 
@@ -61,7 +62,7 @@ function crossOutField(labelId, inputId) {
             input.checked = false;
         }else
         {
-            input.value = ''; // Clear the input if crossed out
+            //input.value = ''; // Clear the input if crossed out
         }
         // assign the css class to the table cell
         // get the parent cell of the label
