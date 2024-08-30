@@ -8,7 +8,6 @@ function calculateUpperTotal() {
     let fives = document.getElementById('fives-label').style.textDecoration === 'line-through' ? 0 : parseInt(document.getElementById('fives').value) || 0;
     let sixes = document.getElementById('sixes-label').style.textDecoration === 'line-through' ? 0 : parseInt(document.getElementById('sixes').value) || 0;
 
-    
     let upperTotal = ones + twos + threes + fours + fives + sixes;
     document.getElementById('upperTotal').value = upperTotal;
 
@@ -21,15 +20,21 @@ function calculateUpperTotal() {
 }
 
 function calculateLowerTotal() {
-    let threeOfAKind = parseInt(document.getElementById('threeOfAKind').value) || 0;
-    let fourOfAKind = parseInt(document.getElementById('fourOfAKind').value) || 0;
-    let chance = parseInt(document.getElementById('chance').value) || 0;
+    // Get the value of each input field, or 0 if crossed
+    let threeOfAKind = document.getElementById('threeOfAKind-label').style.textDecoration === 'line-through' ? 0 : parseInt(document.getElementById('threeOfAKind').value) || 0;
+    let fourOfAKind = document.getElementById('fourOfAKind-label').style.textDecoration === 'line-through' ? 0 : parseInt(document.getElementById('fourOfAKind').value) || 0;
+    let chance = document.getElementById('chance-label').style.textDecoration === 'line-through' ? 0 : parseInt(document.getElementById('chance').value) || 0;
 
     // Full House, Small Straight, Large Straight, Yatzy are checkboxes
-    let fullHouse = document.getElementById('fullHouse').checked ? 25 : 0;
-    let smallStraight = document.getElementById('smallStraight').checked ? 30 : 0;
-    let largeStraight = document.getElementById('largeStraight').checked ? 40 : 0;
-    let yahtzee = document.getElementById('yatzy').checked ? 50 : 0;
+    //let fullHouse = document.getElementById('fullHouse').checked ? 25 : 0;
+    //let smallStraight = document.getElementById('smallStraight').checked ? 30 : 0;
+    //let largeStraight = document.getElementById('largeStraight').checked ? 40 : 0;
+    //let yahtzee = document.getElementById('yatzy').checked ? 50 : 0;
+
+    let fullHouse = document.getElementById('fullHouse-label').style.textDecoration === 'line-through' ? 0 : document.getElementById('fullHouse').checked ? 25 : 0;
+    let smallStraight = document.getElementById('smallStraight-label').style.textDecoration === 'line-through' ? 0 : document.getElementById('smallStraight').checked ? 30 : 0;
+    let largeStraight = document.getElementById('largeStraight-label').style.textDecoration === 'line-through' ? 0 : document.getElementById('largeStraight').checked ? 40 : 0;
+    let yahtzee = document.getElementById('yatzy-label').style.textDecoration === 'line-through' ? 0 : document.getElementById('yatzy').checked ? 50 : 0;
 
     let lowerTotal = threeOfAKind + fourOfAKind + fullHouse + smallStraight + largeStraight + yahtzee + chance;
     document.getElementById('lowerTotal').value = lowerTotal;
@@ -57,14 +62,6 @@ function crossOutField(labelId, inputId) {
         label.style.textDecoration = 'line-through';
         input.disabled = true;
     
-        // if input type is checkbox, uncheck it
-        if (input.type === 'checkbox') {
-            input.checked = false;
-        }else
-        {
-            //input.value = ''; // Clear the input if crossed out
-        }
-        // assign the css class to the table cell
         // get the parent cell of the label
         let cell = label.parentElement;
         cell.classList.add('crossed');
