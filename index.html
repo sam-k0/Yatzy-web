@@ -8,12 +8,19 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h2 style="text-align: center;">Yatzy Scorecard</h2>
+    <div style="text-align: center;">
+        <h2 style="display: inline;">Yatzy Scorecard</h2>
+        <select id="language-select" style="margin-left: 10px;" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+            <option value="kr">한국어</option>
+        </select>
+    </div>
     <form>
         <table>
             <tr>
-                <th>Category</th>
-                <th>Score</th>
+                <th id="header-category">Category</th>
+                <th id="header-score">Score</th>
             </tr>
             <!-- Upper Section -->
             <tr>
@@ -41,11 +48,11 @@
                 <td><input type="number" id="sixes" name="sixes"></td>
             </tr>
             <tr>
-                <td class="total">Upper Section Total</td>
+                <td class="total" id="total-upper-label">Upper Section Total</td>
                 <td><input type="number" name="upperTotal" id="upperTotal" readonly></td>
             </tr>
             <tr>
-                <td class="bonus">Bonus (If total >= 63)</td>
+                <td class="bonus" id="bonus-label">Bonus (If total >= 63)</td>
                 <td><input type="number" id="bonus" name="bonus" readonly></td>
             </tr>
             <!-- Lower Section -->
@@ -66,7 +73,7 @@
                 <td><input type="checkbox" id="smallStraight" ></td>
             </tr>
             <tr>
-                <td id="largeStraight-label" onclick="crossOutField('largeStraight-label', 'largeStraight')">Large Straight</td>
+                <td id="largeStraight-label" onclick="crossOutField('largeStraight-label', 'largeStraight')">Big Straight</td>
                 <td><input type="checkbox" id="largeStraight" ></td>
             </tr>
             <tr>
@@ -78,17 +85,17 @@
                 <td><input type="checkbox" id="yatzy" ></td>
             </tr>
             <tr>
-                <td class="total">Lower Section Total</td>
+                <td class="total" id="total-lower-label">Lower Section Total</td>
                 <td><input type="number" id="lowerTotal" name="lowerTotal" readonly></td>
             </tr>
             <tr>
-                <td class="total">Grand Total</td>
+                <td class="total" id="total-grand-label">Grand Total</td>
                 <td><input type="number" id="grandTotal" name="grandTotal" readonly></td>
             </tr>
         </table>
     </form>
 
-    <p style="text-align: center;">Click on a category to cross it out.</p>
+    <p style="text-align: center;" id="tip-crossout">Click on a category to cross it out.</p>
     <p style="text-align: center;">You can view the update changelog <a href="changelog.html">here</a></p>
     
 </body>

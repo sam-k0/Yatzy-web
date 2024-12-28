@@ -35,7 +35,7 @@ class Changelog {
   }
 
   getChanges() {
-    return this.changes;
+    return this.changes.reverse();
   }
 
   populateChangelog(){
@@ -52,7 +52,7 @@ class Changelog {
         changeDiv.appendChild(version);
 
         // Create and append the description
-        const description = document.createElement('p');
+        const description = document.createElement('h3');
         description.textContent = change.getDescription();
         changeDiv.appendChild(description);
 
@@ -73,14 +73,12 @@ class Changelog {
 // On page load, create a new Changelog object and populate it with Change objects.
 window.onload = function() {
     let changelog = new Changelog();
-    
-    let change1 = new Change("2024.08.16", "Initial release");
-    changelog.addChange(change1);
-
-    let change2 = new Change("2024.08.30", "Improved field crossout",
-       "Crossing out fields now keeps the input value instead of resetting it. This allows for easier tracking of scores."
-    );
-    changelog.addChange(change2);
-
+    changelog.addChange(new Change("2024.08.16", "Initial release"));
+    changelog.addChange(new Change("2024.08.30", "Improved field crossout",
+      "- Crossing out fields now keeps the input value instead of resetting it. This allows for easier tracking of scores."
+    ));
+    changelog.addChange(new Change("2024.12.28", "Language support",
+      "- A selection of languages are now available for the website. These include English, German and Korean."
+    ));
     changelog.populateChangelog();
 }
