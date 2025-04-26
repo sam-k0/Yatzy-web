@@ -80,5 +80,8 @@ window.onload = function() {
     changelog.addChange(new Change("2024.12.28", "Language support",
       "- A selection of languages are now available for the website. These include English, German and Korean."
     ));
+    changelog.addChange(new Change("2025.04.26", "QR Code share",
+      "- Added QR Code to share to friends."
+    ));
     changelog.populateChangelog();
 }
