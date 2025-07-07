@@ -83,5 +83,10 @@ window.onload = function() {
     changelog.addChange(new Change("2025.04.26", "QR Code share",
       "- Added QR Code to share to friends."
     ));
+    changelog.addChange(new Change("2025.07.07", "Translation fix & Bonus update",
+      "- Fixed translation for the 'Bonus' field in English.",
+      "- The bonus field shows how many points are missing to reach the bonus threshold of 63 points in the upper section.",
+      "- Added flags for each language in the language selection dropdown."
+    ));
     changelog.populateChangelog();
 }
