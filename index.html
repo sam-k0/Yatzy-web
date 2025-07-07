@@ -11,9 +11,9 @@
     <div style="text-align: center;">
         <h2 style="display: inline;">Yatzy Scorecard</h2>
         <select id="language-select" style="margin-left: 10px;" onchange="changeLanguage()">
-            <option value="en">English</option>
-            <option value="de">Deutsch</option>
-            <option value="kr">한국어</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="kr">🇰🇷 한국어</option>
         </select>
     </div>
     <form>
@@ -66,15 +66,15 @@
             </tr>
             <tr>
                 <td id="fullHouse-label" onclick="crossOutField('fullHouse-label', 'fullHouse')">Full House</td>
-                <td><input type="checkbox" id="fullHouse"  ></td>
+                <td><input type="checkbox" id="fullHouse"> 25</td>
             </tr>
             <tr>
                 <td id="smallStraight-label" onclick="crossOutField('smallStraight-label', 'smallStraight')">Small Straight</td>
-                <td><input type="checkbox" id="smallStraight" ></td>
+                <td><input type="checkbox" id="smallStraight" > 30</td>
             </tr>
             <tr>
                 <td id="largeStraight-label" onclick="crossOutField('largeStraight-label', 'largeStraight')">Big Straight</td>
-                <td><input type="checkbox" id="largeStraight" ></td>
+                <td><input type="checkbox" id="largeStraight" > 40</td>
             </tr>
             <tr>
                 <td id="chance-label" onclick="crossOutField('chance-label', 'chance')">Chance</td>
@@ -82,7 +82,7 @@
             </tr>
             <tr>
                 <td id="yatzy-label" onclick="crossOutField('yatzy-label', 'yatzy')">Yatzy</td>
-                <td><input type="checkbox" id="yatzy" ></td>
+                <td><input type="checkbox" id="yatzy" > 50</td>
             </tr>
             <tr>
                 <td class="total" id="total-lower-label">Lower Section Total</td>
@@ -95,7 +95,7 @@
         </table>
     </form>
 
-    <p style="text-align: center;" id="tip-crossout">Click on a category to cross it out.</p>
+    <p style="text-align: center;" id="tip-crossout">Click / tap on a category to cross it out.</p>
     <div style="text-align: center;">
         <p>Share QR-Code!</p>
         <img id="qr-code-share" style="text-align: center; max-width: 80%; height: auto;"  src="qr-code-share.png" alt="Share the page!">

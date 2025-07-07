@@ -14,7 +14,14 @@ function calculateUpperTotal() {
     // Calculate bonus
     let bonus = upperTotal >= 63 ? 35 : 0;
     document.getElementById('bonus').value = bonus;
-    
+    // calc missing poits for bonus
+    let missingPoints = 63 - upperTotal;
+    // set bonus label text
+    let lang = document.getElementById('language-select').value;
+    let translation = translations[lang];
+    let addonText = missingPoints > 0 ? ` (-${missingPoints})` : '';
+    document.getElementById('bonus-label').textContent = `${translation['bonus-label']}` + addonText;
+
     // Also return the value for use in the grand total calculation
     return upperTotal + bonus;
 }
@@ -77,7 +84,7 @@ let translations = {
         "fives-label": 'Fives',
         "sixes-label": 'Sixes',
         "total-upper-label": 'Upper Section Total',
-        "bonus": 'Bonus (If total >= 63)',
+        "bonus-label": 'Bonus of 35 (If total >= 63)',
         "threeOfAKind-label": 'Three of a Kind',
         "fourOfAKind-label": 'Four of a Kind',
         "fullHouse-label": 'Full House',
@@ -87,7 +94,7 @@ let translations = {
         "yatzy-label": 'Yatzy',
         "total-lower-label": 'Lower Section Total',
         "total-grand-label": 'Grand Total',
-        "tip-crossout": 'Click on a category to cross it out.',
+        "tip-crossout": 'Click / tap on a category to cross it out.',
     },
     // DE
     "de": {
@@ -100,7 +107,7 @@ let translations = {
         "fives-label": 'Fünfen',
         "sixes-label": 'Sechsen',
         "total-upper-label": 'Summe Oben',
-        "bonus-label": 'Bonus (Wenn Summe >= 63)',
+        "bonus-label": '35 Bonus (Wenn Summe >= 63)',
         "threeOfAKind-label": 'Dreierpasch',
         "fourOfAKind-label": 'Viererpasch',
         "fullHouse-label": 'Full House',
@@ -110,7 +117,7 @@ let translations = {
         "yatzy-label": 'Yatzy',
         "total-lower-label": 'Summe Unten',
         "total-grand-label": 'Gesamtsumme',
-        "tip-crossout": 'Klicken Sie auf eine Kategorie, um sie zu durchstreichen.',
+        "tip-crossout": 'Klicken / Tippen Sie auf eine Kategorie, um sie zu durchstreichen.',
     },
     // Hangul
     "kr": {
@@ -123,7 +130,7 @@ let translations = {
         "fives-label": '오',
         "sixes-label": '육',
         "total-upper-label": '상단 총합',
-        "bonus-label": '보너스 (총합 >= 63)',
+        "bonus-label": '보너스 35 (총합 >= 63)',
         "threeOfAKind-label": '트리플',
         "fourOfAKind-label": '포카드',
         "fullHouse-label": '풀하우스',
