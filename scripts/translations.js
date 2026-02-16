@@ -23,7 +23,7 @@ const translations = {
         "total-grand-label": 'Grand Total',
         "tip-crossout": 'Click / tap on a category to cross it out.',
         // Yatzy 7 specifics
-        "top-bonus-label": 'Bonus of 35 (If total >= 84)',
+        "top-bonus-label": 'Top Bonus of 35 (If total >= 84)',
         "sevens-label": 'Sevens',
         "fiveOfAKind-label": 'Five of a Kind',
         "doubleTriple-label": 'Double Triple',
@@ -54,7 +54,7 @@ const translations = {
         "total-grand-label": 'Gesamtsumme',
         "tip-crossout": 'Klicken / Tippen Sie auf eine Kategorie, um sie zu durchstreichen.',
         // Yatzy 7 specifics
-        "top-bonus-label": '35 Bonus (Wenn Summe >= 84)',
+        "top-bonus-label": '35 Top Bonus (Wenn Summe >= 84)',
         "sevens-label": 'Siebener',
         "fiveOfAKind-label": 'Fünferpasch',
         "doubleTriple-label": 'Doppel-Tripel',
