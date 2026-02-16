@@ -12,13 +12,13 @@ const upperFields = {
 
 // Field definitions for lower section
 const lowerFields = {
-    threeOfAKind: new Field('threeOfAKind', 'threeOfAKind-label', 'threeOfAKind', 'number'),
     fourOfAKind: new Field('fourOfAKind', 'fourOfAKind-label', 'fourOfAKind', 'number'),
-    fullHouse: new Field('fullHouse', 'fullHouse-label', 'fullHouse', 'checkbox', 25),
-    smallStraight: new Field('smallStraight', 'smallStraight-label', 'smallStraight', 'checkbox', 30),
-    largeStraight: new Field('largeStraight', 'largeStraight-label', 'largeStraight', 'checkbox', 40),
+    fiveOfAKind: new Field('fiveOfAKind', 'fiveOfAKind-label', 'fiveOfAKind', 'number'),
+    doubleTriple: new Field('doubleTriple', 'doubleTriple-label', 'fullHouse', 'checkbox', 25),
+    fiveStraight: new Field('fiveStraight', 'fiveStraight-label', 'smallStraight', 'checkbox', 30),
+    sixStraight: new Field('sixStraight', 'sixStraight-label', 'largeStraight', 'checkbox', 40),
     chance: new Field('chance', 'chance-label', 'chance', 'number'),
-    yatzy: new Field('yatzy', 'yatzy-label', 'yatzy', 'checkbox', 50),
+    superYatzy: new Field('superYatzy', 'superYatzy-label', 'yatzy', 'checkbox', 60),
 };
 
 // Result fields (readonly)

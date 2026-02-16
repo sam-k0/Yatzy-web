@@ -12,6 +12,8 @@
 <body>
     <div style="text-align: center;">
         <h2 style="display: inline;">Yatzy7 Scorecard</h2>
+        <span style="margin: 0 10px;">|</span>
+        <a href="index.html" style="font-size: 1.2em; text-decoration: none;">Yatzy</a>
         <select id="language-select" style="margin-left: 10px;" onchange="changeLanguage()">
             <option value="en">🇺🇸 English</option>
             <option value="de">🇩🇪 Deutsch</option>
@@ -27,31 +29,31 @@
             <!-- Upper Section -->
             <tr>
                 <td id="ones-label">Ones</td>
-                <td><input type="number" id="ones" name="ones" ></td>
+                <td><input type="number" id="ones" name="ones" min="0" ></td>
             </tr>
             <tr>
                 <td id="twos-label">Twos</td>
-                <td><input type="number" id="twos" name="twos"></td>
+                <td><input type="number" id="twos" name="twos" min="0"></td>
             </tr>
             <tr>
                 <td id="threes-label">Threes</td>
-                <td><input type="number" name="threes" id="threes" ></td>
+                <td><input type="number" name="threes" id="threes" min="0"></td>
             </tr>
             <tr>
                 <td id="fours-label">Fours</td>
-                <td><input type="number" id="fours" name="fours"></td>
+                <td><input type="number" id="fours" name="fours" min="0"></td>
             </tr>
             <tr>
                 <td id="fives-label">Fives</td>
-                <td><input type="number" id="fives" name="fives"></td>
+                <td><input type="number" id="fives" name="fives" min="0"></td>
             </tr>
             <tr>
                 <td id="sixes-label">Sixes</td>
-                <td><input type="number" id="sixes" name="sixes"></td>
+                <td><input type="number" id="sixes" name="sixes" min="0"></td>
             </tr>
             <tr>
                 <td id="sevens-label">Sevens</td>
-                <td><input type="number" id="sevens" name="sevens"></td>
+                <td><input type="number" id="sevens" name="sevens" min="0"></td>
             </tr>
             <tr>
                 <td class="total" id="total-upper-label">Upper Section Total</td>
@@ -67,23 +69,23 @@
             </tr>
             <!-- Lower Section -->
             <tr>
-                <td id="threeOfAKind-label">Three of a Kind</td>
-                <td><input type="number" id="threeOfAKind" name="threeOfAKind" min="0"></td>
-            </tr>
-            <tr>
                 <td id="fourOfAKind-label">Four of a Kind</td>
                 <td><input type="number" id="fourOfAKind" name="fourOfAKind" min="0"></td>
             </tr>
             <tr>
-                <td id="fullHouse-label">Full House</td>
+                <td id="fiveOfAKind-label">Five of a Kind</td>
+                <td><input type="number" id="fiveOfAKind" name="fiveOfAKind" min="0"></td>
+            </tr>
+            <tr>
+                <td id="doubleTriple-label">Double Triple</td>
                 <td><input type="checkbox" id="fullHouse"> 25</td>
             </tr>
             <tr>
-                <td id="smallStraight-label">Small Straight</td>
+                <td id="fiveStraight-label">Five in a Row</td>
                 <td><input type="checkbox" id="smallStraight" > 30</td>
             </tr>
             <tr>
-                <td id="largeStraight-label">Big Straight</td>
+                <td id="sixStraight-label">Six in a Row</td>
                 <td><input type="checkbox" id="largeStraight" > 40</td>
             </tr>
             <tr>
@@ -91,8 +93,8 @@
                 <td><input type="number" id="chance" name="chance" min="0"></td>
             </tr>
             <tr>
-                <td id="yatzy-label">Yatzy</td>
-                <td><input type="checkbox" id="yatzy" > 50</td>
+                <td id="superYatzy-label">Super Yatzy</td>
+                <td><input type="checkbox" id="yatzy" > 60</td>
             </tr>
             <tr>
                 <td class="total" id="total-lower-label">Lower Section Total</td>

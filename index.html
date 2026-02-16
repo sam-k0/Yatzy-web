@@ -12,6 +12,8 @@
 <body>
     <div style="text-align: center;">
         <h2 style="display: inline;">Yatzy Scorecard</h2>
+        <span style="margin: 0 10px;">|</span>
+        <a href="yatzy7.html" style="font-size: 1.2em; text-decoration: none;">Yatzy7</a>
         <select id="language-select" style="margin-left: 10px;" onchange="changeLanguage()">
             <option value="en">🇺🇸 English</option>
             <option value="de">🇩🇪 Deutsch</option>
@@ -27,27 +29,27 @@
             <!-- Upper Section -->
             <tr>
                 <td id="ones-label">Ones</td>
-                <td><input type="number" id="ones" name="ones" ></td>
+                <td><input type="number" id="ones" name="ones" min="0"></td>
             </tr>
             <tr>
                 <td id="twos-label">Twos</td>
-                <td><input type="number" id="twos" name="twos"></td>
+                <td><input type="number" id="twos" name="twos" min="0"></td>
             </tr>
             <tr>
                 <td id="threes-label">Threes</td>
-                <td><input type="number" name="threes" id="threes" ></td>
+                <td><input type="number" name="threes" id="threes" min="0"></td>
             </tr>
             <tr>
                 <td id="fours-label">Fours</td>
-                <td><input type="number" id="fours" name="fours"></td>
+                <td><input type="number" id="fours" name="fours" min="0"></td>
             </tr>
             <tr>
                 <td id="fives-label">Fives</td>
-                <td><input type="number" id="fives" name="fives"></td>
+                <td><input type="number" id="fives" name="fives" min="0"></td>
             </tr>
             <tr>
                 <td id="sixes-label">Sixes</td>
-                <td><input type="number" id="sixes" name="sixes"></td>
+                <td><input type="number" id="sixes" name="sixes" min="0"></td>
             </tr>
             <tr>
                 <td class="total" id="total-upper-label">Upper Section Total</td>
