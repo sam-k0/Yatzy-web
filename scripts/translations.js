@@ -22,6 +22,14 @@ const translations = {
         "total-lower-label": 'Lower Section Total',
         "total-grand-label": 'Grand Total',
         "tip-crossout": 'Click / tap on a category to cross it out.',
+        // Yatzy 7 specifics
+        "top-bonus-label": 'Bonus of 35 (If total >= 84)',
+        "sevens-label": 'Sevens',
+        "fiveOfAKind-label": 'Five of a Kind',
+        "doubleTriple-label": 'Double Triple',
+        "fiveStraight-label": 'Five in a Row',
+        "sixStraight-label": 'Six in a Row',
+        "superYatzy-label": 'Super Yatzy',
     },
     // DE
     "de": {
@@ -45,6 +53,14 @@ const translations = {
         "total-lower-label": 'Summe Unten',
         "total-grand-label": 'Gesamtsumme',
         "tip-crossout": 'Klicken / Tippen Sie auf eine Kategorie, um sie zu durchstreichen.',
+        // Yatzy 7 specifics
+        "top-bonus-label": '35 Bonus (Wenn Summe >= 84)',
+        "sevens-label": 'Siebener',
+        "fiveOfAKind-label": 'Fünferpasch',
+        "doubleTriple-label": 'Doppel-Tripel',
+        "fiveStraight-label": 'Fünferstraße',
+        "sixStraight-label": 'Sechserstraße',
+        "superYatzy-label": 'Super Yatzy',
     },
     // Hangul
     "kr": {
@@ -68,5 +84,13 @@ const translations = {
         "total-lower-label": '하단 총합',
         "total-grand-label": '총합',
         "tip-crossout": '카테고리를 클릭하여 취소선을 긋습니다.',
+        // Yatzy 7 specifics
+        "top-bonus-label": '보너스 35 (총합 >= 84)',
+        "sevens-label": '칠',
+        "fiveOfAKind-label": '파이브카드',
+        "doubleTriple-label": '더블 트리플',
+        "fiveStraight-label": '연속 다섯 개',
+        "sixStraight-label": '연속 여섯 개',
+        "superYatzy-label": '슈퍼 야츠',
     }
 };
