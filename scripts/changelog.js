@@ -88,5 +88,8 @@ window.onload = function() {
       "- The bonus field shows how many points are missing to reach the bonus threshold of 63 points in the upper section.\n"+
       "- Added flags for each language in the language selection dropdown."
     ));
+    changelog.addChange(new Change("2025.07.16", "Yatzy7 release",
+      "- Added a new version of the scorecard called Yatzy7."
+    ));
     changelog.populateChangelog();
 }
