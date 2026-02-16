@@ -7,6 +7,7 @@ const upperFields = {
     fours: new Field('fours', 'fours-label', 'fours', 'number'),
     fives: new Field('fives', 'fives-label', 'fives', 'number'),
     sixes: new Field('sixes', 'sixes-label', 'sixes', 'number'),
+    sevens: new Field('sevens', 'sevens-label', 'sevens', 'number'),
 };
 
 // Field definitions for lower section
@@ -24,6 +25,7 @@ const lowerFields = {
 const resultFields = {
     upperTotal: new Field('upperTotal', 'total-upper-label', 'upperTotal', 'number'),
     bonus: new Field('bonus', 'bonus-label', 'bonus', 'number'),
+    topBonus: new Field('topBonus', 'top-bonus-label', 'topBonus', 'number'),
     lowerTotal: new Field('lowerTotal', 'total-lower-label', 'lowerTotal', 'number'),
     grandTotal: new Field('grandTotal', 'total-grand-label', 'grandTotal', 'number'),
 };
@@ -46,17 +48,28 @@ function calculateUpperTotal() {
     // Calculate bonus
     let bonus = upperTotal >= 63 ? 35 : 0;
     resultFields.bonus.setValue(bonus);
+
+    // Calculate top bonus
+    let topbonus = upperTotal >= 84 ? 35 : 0;
+    resultFields.topBonus.setValue(topbonus);
     
-    // calc missing points for bonus
-    let missingPoints = 63 - upperTotal;
+    
     // set bonus label text
     let lang = document.getElementById('language-select').value;
     let translation = translations[lang];
+    // calc missing points for bonus
+    let missingPoints = 63 - upperTotal;
     let addonText = missingPoints > 0 ? ` (-${missingPoints})` : '';
     document.getElementById('bonus-label').textContent = `${translation['bonus-label']}` + addonText;
 
+
+    // calc missing points for top bonus
+    let missingPointsTop = 84 - upperTotal;
+    let addonTextTop = missingPointsTop > 0 ? ` (-${missingPointsTop})` : '';
+    document.getElementById('top-bonus-label').textContent = `${translation['top-bonus-label']}` + addonTextTop;
+
     // Return the total including bonus for grand total calculation
-    return upperTotal + bonus;
+    return upperTotal + bonus + topbonus;
 }
 
 function calculateLowerTotal() {
