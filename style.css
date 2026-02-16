@@ -28,6 +28,17 @@ th {
     background-color: #d9edf7;
 }
 
-.crossed{
+/* Make category labels clickable */
+td:first-child {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hover effect for category labels */
+td:first-child:hover {
+    background-color: #f0f0f0;
+}
+
+.crossed {
     background-color: rgb(214, 139, 139);
 }
